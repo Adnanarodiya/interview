@@ -2,8 +2,15 @@ import { Link } from "react-router-dom";
 import { FaArrowDown } from "react-icons/fa6";
 import { BsDot } from "react-icons/bs";
 import Card from "./Card";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import Cards from "./Cards";
+import { AiOutlineDownload } from "react-icons/ai";
+import { IoIosArrowDown } from "react-icons/io";
 
 export default function Home() {
+  const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay()]);
+
   return (
     <>
       <section className="bg-cover bg-center h-[800px] bg-repeat animate-ltr-linear-infinite bg-hero-pattern  ">
@@ -196,28 +203,236 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container">
-        <div className="mt-64">
-          <div className="flex mx-auto gap-8 w-4/5 mb-40">
+      <section className="container ">
+        <div className="embla w-full" ref={emblaRef}>
+          <div className="embla__container">
+            <div className=" embla__slide flex">
+              <section className="container">
+                <div className="mt-24">
+                  <div className="flex mx-auto gap-8 w-4/5 mb-28">
+                    <div>
+                      <h1 className="text-3xl w-80 mt-20">
+                        Precision Medicine Profiling
+                      </h1>
+                      <p className="w-[450px] mt-4">
+                        Mutanex uses advanced genetic sequencing technology and
+                        artificial intelligence to identify potential mutations
+                        in your genes, enabling early intervention and
+                        prevention.
+                      </p>
+                      <button
+                        type="button"
+                        className="p-3 mt-6 text-[#3F3172] border border-[#3F3172] rounded-full font-bold"
+                      >
+                        Get Started
+                      </button>
+                    </div>
+                    <div className="w-[500px]">
+                      <img src="/card 2.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div className="embla__slide">
+              <section className="container">
+                <div className="mt-24">
+                  <div className="flex mx-auto gap-8 w-4/5 mb-28">
+                    <div>
+                      <h1 className="text-3xl w-80 mt-20">
+                        Precision Medicine Profiling
+                      </h1>
+                      <p className="w-[450px] mt-4">
+                        Mutanex uses advanced genetic sequencing technology and
+                        artificial intelligence to identify potential mutations
+                        in your genes, enabling early intervention and
+                        prevention.
+                      </p>
+                      <button
+                        type="button"
+                        className="p-3 mt-6 text-[#3F3172] border border-[#3F3172] rounded-full font-bold"
+                      >
+                        Get Started
+                      </button>
+                    </div>
+                    <div className="w-[500px]">
+                      <img src="/card 2.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div className="embla__slide">
+              <section className="container">
+                <div className="mt-24">
+                  <div className="flex mx-auto gap-8 w-4/5 mb-28">
+                    <div>
+                      <h1 className="text-3xl w-80 mt-20">
+                        Precision Medicine Profiling
+                      </h1>
+                      <p className="w-[450px] mt-4">
+                        Mutanex uses advanced genetic sequencing technology and
+                        artificial intelligence to identify potential mutations
+                        in your genes, enabling early intervention and
+                        prevention.
+                      </p>
+                      <button
+                        type="button"
+                        className="p-3 mt-6 text-[#3F3172] border border-[#3F3172] rounded-full font-bold"
+                      >
+                        Get Started
+                      </button>
+                    </div>
+                    <div className="w-[500px]">
+                      <img src="/card 2.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="border border-black absolute w-[800px] mt-9"></div>
+        <div className="container">
+          <div className="flex justify-end">
+            <h2 className="text-4xl w-[550px] ">
+              See what we are trying to do and how it works
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <div className="flex gap-12 mt-16">
+            <Cards
+              imageUrl="/card-img-1.png"
+              title="For Patients"
+              description="At Mutanex, we empower healthcare providers like hospitals and clinics with advanced tools to streamline precision medicine treatment protocols and drug modifications for the patients. It helps them to get precision treatment insights."
+              buttonText="Get Started"
+            />
+            <Cards
+              imageUrl="/card-img-2.png"
+              title="For Laboratories"
+              description="For individuals with cancer, genetic and rare disorders, we helps you get personalized medical advice based on your Genetic Profiles. Also get a Predicted analysis of your condition just by using your clinical info with our Machine Learning Models for Free."
+              buttonText="Get Started"
+            />
+            <Cards
+              imageUrl="/card-img-3.png"
+              title="For Laboratories"
+              description="Mutanex revolutionizes diagnostic by significantly reducing the time and cost associated with genetic analysis. Our platform automates the analysis process, reducing the turnaround time for generating genetic reports from weeks to mere minutes."
+              buttonText="Get Started"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[url('/Gradient.png')]">
+        <div className="container">
+          <div className="flex justify-between py-20">
             <div>
-              <h1 className="text-3xl w-80 mt-20">
-                Precision Medicine Profiling
-              </h1>
-              <p className="w-[450px] mt-4">
-                Mutanex uses advanced genetic sequencing technology and
-                artificial intelligence to identify potential mutations in your
-                genes, enabling early intervention and prevention.
+              <h2 className="text-3xl">Unveil your genetic blueprint</h2>
+              <p className="mt-6 w-[800px] text-2xl">
+                Experience the future of medical insights by downloading our
+                sample report, a comprehensive 30-page document that delves deep
+                into your genetic makeup and provides you with a personalized
+                treatment profile.
               </p>
-              <button
-                type="button"
-                className="p-3 mt-6 text-[#3F3172] border border-[#3F3172] rounded-full font-bold"
-              >
-                Get Started
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <div className="w-[250px]">
+                <img src="/sample.png" alt="" />
+              </div>
+              <div>
+                <button className="flex btn w-full btn-primary p-3 mt-6 text-[#3F3172] border border-[#3F3172] rounded-full font-bold btn btn-wide text-center items-center gap-2  ">
+                  Download sample report
+                  <AiOutlineDownload />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-20">
+        <div className="container">
+          <h1 className="text-3xl w-96">Frequently asked questions (FAQs)</h1>
+          <p className="mt-4">
+            Please reach us at if you cannot find an answer to your question.
+          </p>
+          <div className="mt-4 border border-black"></div>
+
+          <div className="w-4/5 mx-auto">
+            <div className="flex text-center items-center justify-between mt-8 px-4">
+              <h1>Why Should I use Mutanex?</h1>
+              <IoIosArrowDown />
+            </div>
+            <div className="mt-4 border border-black"></div>
+          </div>
+          <div className="w-4/5 mx-auto">
+            <div className="flex text-center items-center justify-between mt-8 px-4">
+              <h1>What are Mutanex’s operating hours?</h1>
+              <IoIosArrowDown />
+            </div>
+            <div className="mt-4 border border-black"></div>
+          </div>
+          <div className="w-4/5 mx-auto">
+            <div className="flex text-center items-center justify-between mt-8 px-4">
+              <h1>How secure is my genetic information on Mutanex?</h1>
+              <IoIosArrowDown />
+            </div>
+            <div className="mt-4 border border-black"></div>
+          </div>
+          <div className="w-4/5 mx-auto">
+            <div className="flex text-center items-center justify-between mt-8 px-4">
+              <h1>How do I access my Mutanex report?</h1>
+              <IoIosArrowDown />
+            </div>
+            <div className="mt-4 border border-black"></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-28 bg-[#3F3073] text-white">
+        <div className="container pt-20">
+          <div>
+            <img src="/logo.png" alt="" />
+            <p className="text-xs mt-1">A step towards precision</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <h4 className="text-lg font-bold">Subscribe</h4>
+            <p className="mt-4">
+              Get 10% off on your first purchase when you sign up for our
+              newsletter.
+            </p>
+            <div className="">
+              <input
+                className="bg-[#56439A] p-2 rounded-full w-96 mt-4 mr-4"
+                type="email"
+                placeholder="Email address"
+              />
+              <button className="btn btn-primary p-3 h-auto w-20 text-white border border-whtext-white rounded-full font-bold">
+                Login
               </button>
             </div>
-            <div className="w-[500px]">
-              <img src="/card 2.png" alt="" />
+            <div className="bg-[#534480] rounded-xl p-6 w-3/5 mt-20">
+              <div className="flex">
+                <div>
+                  <img className="mr-10" src="comma.png" alt="" />
+                </div>
+                <div>
+                  At Mutanex, our aim is to promote affordable, accurate, and
+                  rapid healthcare through AI-driven Genetic Analysis and
+                  Precision Medicine Services.
+                </div>
+              </div>
+              <p className="mt-6 flex justify-end">- Saiful Khan (Founder)</p>
             </div>
+            <div className="mt-10 border border-white w-full"></div>
+            <p className="mt-6">Copyright 2024 Mutanex - All Rights Reserved</p>
           </div>
         </div>
       </section>
