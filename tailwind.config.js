@@ -13,6 +13,7 @@ export default {
 
       backgroundImage: () => ({
         "hero-pattern": "url('/home.png')",
+        "image-1": "url('/image 1.png')",
       }),
       animation: {
         "spin-slow": "spin 20s linear infinite",

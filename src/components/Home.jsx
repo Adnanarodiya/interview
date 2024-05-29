@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { FaArrowDown } from "react-icons/fa6";
 import { BsDot } from "react-icons/bs";
+import Card from "./Card";
 
 export default function Home() {
   return (
     <>
-      <div className="bg-cover bg-center h-[800px] bg-repeat animate-ltr-linear-infinite bg-hero-pattern  ">
+      <section className="bg-cover bg-center h-[800px] bg-repeat animate-ltr-linear-infinite bg-hero-pattern  ">
         <div className="container flex justify-between text-white p-4 text-center items-center ">
           <div>
             <img src="/logo.png" alt="" />
@@ -35,8 +36,9 @@ export default function Home() {
             <FaArrowDown height={200} />
           </div>
         </div>
-      </div>
-      <div className="bg-white absolute   -mt-28 rounded-full w-full">
+      </section>
+
+      <section className="bg-white absolute   -mt-28 rounded-full w-full">
         <div className="container mt-14 ">
           <div className="p-8 flex">
             <div className="w-2/5">
@@ -54,55 +56,37 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </div>
-      <div className="mt-52">
+      </section>
+
+      <section className="mt-52">
         <div className="container">
           <div className="flex justify-center gap-20">
-            <div
-              className="w-2/5
-            "
-            >
-              <div className="bg-red-700 ">
-                <img src="/image1-1.png" alt="" />
-              </div>
-              <h3 className="text-4xl mt-4">
-                Know your genes in just few minutes
-              </h3>
-              <p className="mt-4 text-xl">
-                Our platform has the first in the world model for prediction of
-                Pathogenicity without Genetic Analysis by featuring our AI
-                symptoms, demography and familial history association models,
-                ensuring a seamless experience for both healthcare providers and
-                patients. This is nearly 1000 times faster than the manual
-                process
-              </p>
-            </div>
-            <div className="w-2/5">
-              <div>
-                <img src="/image2-2.png" alt="" />
-              </div>
-              <h3 className="text-4xl mt-4">
-                Elevating your health without breaking the bank.
-              </h3>
-              <p className="mt-4 text-xl">
-                What sets Mutanex apart is its ability to create personalized
-                treatment regimens tailored to each patient according to their
-                genetic makeup, all through the assistance of an automated AI
-                system. Our automation has significantly reduced the cost of
-                creating precision profiles by up to 10 folds
-              </p>
-            </div>
+            <Card
+              imageSrc={"/image 1.png"}
+              title={"Know your genes in just few minutes"}
+              description={
+                "Our platform has the first in the world model for prediction of Pathogenicity without Genetic Analysis by featuring our AI symptoms, demography and familial history association models, ensuring a seamless experience for both healthcare providers and patients. This is nearly 1000 times faster than the manual process"
+              }
+            />
+            <Card
+              imageSrc={"/image 2.png"}
+              title={"Elevating your health without breaking the bank."}
+              description={
+                "What sets Mutanex apart is its ability to create personalized treatment regimens tailored to each patient according to their genetic makeup, all through the assistance of an automated AI system. Our automation has significantly reduced the cost of creating precision profiles by up to 10 folds"
+              }
+            />
           </div>
           <div className="mt-10 border border-black"></div>
         </div>
-      </div>
-      <div className="mt-8 ">
+      </section>
+
+      <section className="mt-8 ">
         <div className="container">
           <h1 className="text-4xl w-[550px]">
             See what we are trying to do and how it works
           </h1>
           <div>
-            <div className="flex gap-16  mt-8">
+            <div className="flex gap-16  mt-12">
               <div className="w-2/5 px-8">
                 <h3 className="text-2xl">01</h3>
                 <h3 className="text-2xl font-bold mt-2">
@@ -118,11 +102,11 @@ export default function Home() {
                 <img src="/image 3.png" alt="" />
               </div>
             </div>
-            <div className="flex float-right gap-16 mt-32">
-              <div className="w-[500px] ">
+            <div className="flex justify-end gap-16 mt-32 ">
+              <div className="w-[500px]   ">
                 <img src="/image 4.png" alt="" />
               </div>
-              <div className="w-2/5 px-8 mr-20">
+              <div className="w-1/3 px-8 mr-20">
                 <h3 className="text-2xl">02</h3>
                 <h3 className="text-2xl font-bold mt-2">Genetic analysis </h3>
                 <p className="mt-2 w-[400px]">
@@ -136,7 +120,7 @@ export default function Home() {
                 <img src="Vector 20.png" alt="" />
               </div>
             </div>
-            <div className="flex float-right gap-16 mt-32">
+            <div className="flex justify-end gap-16 mt-32">
               <div className="absolute start-48 w-24 -mt-36">
                 <img src="Rectangle 130.png" alt="" />
               </div>
@@ -145,7 +129,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mt-2">
                   AI profiling & review
                 </h3>
-                <p className="mt-2 w-[400px]">
+                <p className="mt-2 w-[430px]">
                   Mutanex uses advanced genetic sequencing technology and
                   artificial intelligence to identify potential mutations in
                   your genes. The results are verified by a physician, ensuring
@@ -157,7 +141,7 @@ export default function Home() {
                 <img src="/image 5.png" alt="" />
               </div>
             </div>
-            <div className="flex float-left gap-16 mt-32">
+            <div className="flex justify-start gap-16 mt-32">
               <div className="w-[500px] ">
                 <img src="/image 6.png" alt="" />
               </div>
@@ -167,7 +151,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mt-2">
                   Precision dosage modification
                 </h3>
-                <p className="mt-2 w-[400px]">
+                <p className="mt-2 w-[500px]">
                   We also facilitates dosage modification profiling by tracking
                   patient progress and adjusting treatments for optimal outcomes
                   through a user-friendly interface where healthcare providers
@@ -175,32 +159,30 @@ export default function Home() {
                   time.
                 </p>
               </div>
-              <div className="absolute w-24 end-36  -mt-28">
+              <div className="absolute w-[100px] end-36  -mt-28">
                 <img src="Vector 25.png" alt="" />
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="mt-20">
-        <div className="container">
-          <div className="flex float-left ml-36   mt-20 ">
-            <div className="flex justify-center text-center items-center">
-              <h3 className="text-4xl">Transform your health</h3>
-              <BsDot size={80} color="#3F3172" />
-            </div>
+      </section>
+
+      <section className="mt-20">
+        <div className="container ">
+          <div className="flex justify-start text-center items-center ml-36 mt-20 ">
+            <h3 className="text-4xl">Transform your health</h3>
+            <BsDot size={80} color="#3F3172" />
           </div>
-          <div className="flex float-left -ml-32 mt-36 ">
-            <div className="flex justify-center text-center items-center">
-              <BsDot size={80} color="#3F3172" />
-              <h3 className="text-4xl">with expert advice from mutanex</h3>
-            </div>
+          <div className="flex justify-start text-center items-center ml-96  ">
+            <BsDot size={80} color="#3F3172" />
+            <h3 className="text-4xl">with expert advice from mutanex</h3>
           </div>
         </div>
-      </div>
-      <div className="mt-20">
+      </section>
+
+      <section className="mt-6">
         <div className="container">
-          <div className="flex float-left    mt-20 ">
+          <div className="float-left  mt-20 ">
             <div className="flex">
               <div className="w-[550px]">
                 <h3 className="text-4xl  relative">
@@ -212,7 +194,33 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="container">
+        <div className="mt-64">
+          <div className="flex mx-auto gap-8 w-4/5 mb-40">
+            <div>
+              <h1 className="text-3xl w-80 mt-20">
+                Precision Medicine Profiling
+              </h1>
+              <p className="w-[450px] mt-4">
+                Mutanex uses advanced genetic sequencing technology and
+                artificial intelligence to identify potential mutations in your
+                genes, enabling early intervention and prevention.
+              </p>
+              <button
+                type="button"
+                className="p-3 mt-6 text-[#3F3172] border border-[#3F3172] rounded-full font-bold"
+              >
+                Get Started
+              </button>
+            </div>
+            <div className="w-[500px]">
+              <img src="/card 2.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
