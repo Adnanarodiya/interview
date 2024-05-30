@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <>
-      <div className=" flex justify-between text-white p-4  top-0 inset-0 z-10 fixed bg-opacity-80 container bg-transparent ">
+      <div className=" h-16 flex justify-between text-white p-4  top-0 inset-0 z-10 fixed bg-opacity-80 container bg-transparent ">
         <div>
           <img src="/logo.png" alt="" />
         </div>

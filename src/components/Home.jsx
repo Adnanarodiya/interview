@@ -6,12 +6,18 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Cards from "./Cards";
 import { AiOutlineDownload } from "react-icons/ai";
-import { IoIosArrowDown } from "react-icons/io";
+// import { IoIosArrowDown } from "react-icons/io";
 import Header from "./Header";
+import Faq from "./Faq";
 
 export default function Home() {
   const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay()]);
-
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <Header />
@@ -25,14 +31,17 @@ export default function Home() {
             Get personalized reports in just minutes
           </p>
         </div>
-        <div className="bg-white w-16 h-16  mx-auto mt-16  rounded-full">
-          <div className="text-center mx-auto  justify-center flex p-6">
+        <div
+          className="bg-white w-16 h-16 mx-auto mt-16 rounded-full cursor-pointer"
+          onClick={() => scrollToSection("1")}
+        >
+          <div className="text-center mx-auto justify-center flex p-6">
             <FaArrowDown height={200} />
           </div>
         </div>
       </section>
       <section className="bg-white -mt-44 rounded-t-[100px]">
-        <section className=" z-40">
+        <section id="1" className=" z-40">
           <div className="container mt-14 ">
             <div className="p-8 flex pt-20">
               <div className="w-2/5">
@@ -349,47 +358,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mt-20">
-          <div className="container">
-            <h1 className="text-3xl w-96">Frequently asked questions (FAQs)</h1>
-            <p className="mt-4">
-              Please reach us at if you cannot find an answer to your question.
-            </p>
-            <div className="mt-4 border border-black"></div>
-
-            <div className="w-4/5 mx-auto">
-              <div
-                role="button"
-                className="flex  text-center items-center justify-between mt-8 px-4"
-              >
-                <h1>Why Should I use Mutanex?</h1>
-                <IoIosArrowDown />
-              </div>
-              <div className="mt-4 border border-black"></div>
-            </div>
-            <div className="w-4/5 mx-auto">
-              <div className="flex text-center items-center justify-between mt-8 px-4">
-                <h1>What are Mutanex’s operating hours?</h1>
-                <IoIosArrowDown />
-              </div>
-              <div className="mt-4 border border-black"></div>
-            </div>
-            <div className="w-4/5 mx-auto">
-              <div className="flex text-center items-center justify-between mt-8 px-4">
-                <h1>How secure is my genetic information on Mutanex?</h1>
-                <IoIosArrowDown />
-              </div>
-              <div className="mt-4 border border-black"></div>
-            </div>
-            <div className="w-4/5 mx-auto">
-              <div className="flex text-center items-center justify-between mt-8 px-4">
-                <h1>How do I access my Mutanex report?</h1>
-                <IoIosArrowDown />
-              </div>
-              <div className="mt-4 border border-black"></div>
-            </div>
-          </div>
-        </section>
+        <Faq />
 
         <section className="mt-28 bg-[#3F3073] text-white">
           <div className="container pt-20">
